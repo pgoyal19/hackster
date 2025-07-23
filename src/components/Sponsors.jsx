@@ -14,7 +14,7 @@ const sponsors = [
  
   {
     title: 'Education Partner',
-    items: [{ name: 'Smaash', logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3yy-GITWxZDmkSFu2TwU3dzMsaxhtanqB5w&s" }],
+    items: [{ name: 'Finlatics', logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3yy-GITWxZDmkSFu2TwU3dzMsaxhtanqB5w&s" }],
   },
  
   {

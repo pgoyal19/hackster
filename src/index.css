@@ -1,0 +1,184 @@
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #e0e6ed;
+  background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  /* Remove flex centering for normal document flow */
+  /* display: flex; */
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+  background: #000;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  /* Optional: Uncomment for max-width and centering on large screens */
+  /* max-width: 1400px; */
+  /* margin: 0 auto; */
+  background: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 900px) {
+  body {
+    padding: 2rem 0;
+  }
+  h1 {
+    font-size: 4em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+}
+
+a {
+  font-weight: 500;
+  color: #3be8b0;
+  text-decoration: inherit;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #ffb86b;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background: linear-gradient(90deg, #3be8b0 0%, #43e97b 100%);
+  color: #181c2b;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.3s, color 0.3s;
+  box-shadow: 0 2px 8px #23294633;
+}
+button:hover {
+  border-color: #ffb86b;
+  background: linear-gradient(90deg, #ffb86b 0%, #ff6a6a 100%);
+  color: #fff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.8s cubic-bezier(.23,1.01,.32,1) forwards;
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  #root {
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 2.1em;
+    line-height: 1.2;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  .prize-section,
+  .about-section,
+  .tracks-section,
+  .team-section,
+  .events-section,
+  .sponsor-section,
+  .footer {
+    padding: 2.2rem 0.7rem !important;
+  }
+  .card-grid,
+  .tracks-grid,
+  .team-grid,
+  .sponsor-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .award-card,
+  .track-card,
+  .team-card,
+  .sponsor-card {
+    min-width: unset !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1.2rem 0.7rem !important;
+  }
+  .about-image img {
+    width: 90vw !important;
+    max-width: 260px !important;
+  }
+  .footer-section {
+    margin: 6px !important;
+    padding: 0.7rem !important;
+  }
+  button, .join-btn, .cta-buttons .register, .cta-buttons .conduct {
+    font-size: 1em !important;
+    padding: 0.7em 1.1em !important;
+    border-radius: 10px !important;
+  }
+  .floating-shapes div, .about-shape {
+    display: none !important;
+  }
+}

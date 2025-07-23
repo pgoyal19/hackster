@@ -1,0 +1,105 @@
+.faqs-section {
+  background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+  color: #3be8b0;
+  padding: clamp(1.2rem, 5vw, 5rem) clamp(0.3rem, 3vw, 2rem);
+  font-family: 'Poppins', Courier, monospace;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.faqs-section h3 {
+  text-align: center;
+  font-size: clamp(1em, 4vw, 2.5rem);
+  margin-bottom: clamp(20px, 4vw, 40px);
+  margin-top: 10px;
+  color: #e2c4a4;
+  text-shadow: 0 2px 16px #e2c4a444;
+  letter-spacing: 1px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(0.3rem, 2vw, 2rem);
+}
+
+.faq-item {
+  background: rgba(35, 41, 70, 0.7);
+  border-radius: 15px;
+  margin-bottom: clamp(0.7rem, 2vw, 1rem);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(.23,1.01,.32,1);
+  border: 2px solid #3be8b0;
+  box-shadow: 0 4px 32px #3be8b055;
+  backdrop-filter: blur(8px);
+}
+
+.faq-item:hover {
+  transform: translateY(-2px) scale(1.01);
+  border-color: #e2c4a4;
+  box-shadow: 0 8px 32px #e2c4a499, 0 0 0 4px #3be8b033;
+}
+
+.faq-item.active {
+  background: rgba(35, 41, 70, 0.85);
+  box-shadow: 0 0 20px #3be8b044;
+  border-color: #e2c4a4;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(0.7rem, 2vw, 1.5rem);
+  cursor: pointer;
+  color: #3be8b0;
+  font-family: 'Poppins', monospace;
+  font-size: clamp(0.92rem, 2vw, 1.1rem);
+}
+
+.faq-question span {
+  font-size: clamp(0.92rem, 2vw, 1.1rem);
+  font-weight: 500;
+  color: #e2c4a4;
+  text-shadow: 0 2px 16px #e2c4a444;
+}
+
+.faq-question i {
+  color: #3be8b0;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  transition: transform 0.3s cubic-bezier(.23,1.01,.32,1), color 0.3s;
+}
+
+.faq-item.active .faq-question i,
+.faq-item:hover .faq-question i {
+  color: #e2c4a4;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(.23,1.01,.32,1);
+  background: none;
+}
+
+.faq-answer p {
+  padding: 0 clamp(0.7rem, 2vw, 1.5rem) clamp(0.7rem, 2vw, 1.5rem);
+  color: #e2c4a4;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  text-shadow: 0 2px 8px #3be8b044;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .faq-item,
+  .faq-question i {
+    transition: none !important;
+  }
+}

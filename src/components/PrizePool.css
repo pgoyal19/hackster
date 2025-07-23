@@ -1,0 +1,142 @@
+.prize-section {
+  background: transparent;
+  color: #3be8b0;
+  padding: clamp(2rem, 5vw, 7rem) clamp(0.5rem, 4vw, 8vw) clamp(1.5rem, 4vw, 5rem) clamp(0.5rem, 4vw, 8vw);
+  font-family: 'Poppins', Courier, monospace;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.prize-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: url('/prize.png') center/cover no-repeat;
+  filter: blur(3px) brightness(0.6);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.prize-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.prize-heading {
+  font-size: clamp(1.4rem, 5vw, 2.8rem);
+  color: #3be8b0;
+  margin-bottom: clamp(1.2rem, 4vw, 3rem);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px #43e97b44;
+  animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
+}
+
+.prize-heading span {
+  color: #e2c4a4;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.2rem, 4vw, 2.5rem);
+  justify-content: center;
+  margin-bottom: clamp(1.2rem, 4vw, 3rem);
+}
+
+@media (min-width: 700px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+.award-card {
+  background: linear-gradient(120deg, #232946 60%, #181c2b 100%);
+  border: 2px solid #3be8b0;
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.7rem, 2vw, 1.5rem) clamp(0.7rem, 2vw, 1.5rem) clamp(0.7rem, 2vw, 1.5rem);
+  border-radius: 18px;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 4px 32px #3be8b055;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.8s cubic-bezier(.23,1.01,.32,1) forwards;
+  min-width: unset;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.award-card:hover {
+  border-color: #e2c4a4;
+  box-shadow: 0 8px 32px #e2c4a455, 0 0 0 4px #3be8b033;
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+}
+
+.emoji {
+  font-size: clamp(1.2rem, 5vw, 2.8rem);
+  margin-bottom: clamp(0.7rem, 2vw, 1.2rem);
+  filter: drop-shadow(0 2px 8px #43e97b44);
+  animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
+}
+
+.award-card h3 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  margin-bottom: clamp(0.7rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: #e2c4a4;
+  letter-spacing: 0.5px;
+}
+
+.award-card button {
+  background: none;
+  border: none;
+  color: #3be8b0;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: 'Poppins', monospace;
+}
+.award-card button:hover {
+  color: #e2c4a4;
+}
+
+.prize-info {
+  margin-top: 1rem;
+  background: #232946cc;
+  padding: clamp(0.7rem, 2vw, 1.1rem);
+  border: 1px solid #e2c4a499;
+  border-radius: 12px;
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  line-height: 1.5;
+  color: #e2c4a4;
+  box-shadow: 0 2px 12px #e2c4a422;
+  animation: fadeIn 0.7s cubic-bezier(.23,1.01,.32,1);
+}
+
+.special-heading {
+  font-family: 'Poppins', monospace;
+  color: #3be8b0;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  margin: clamp(1rem, 3vw, 2.5rem) 0 clamp(0.7rem, 2vw, 1.5rem);
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 16px #43e97b44;
+  animation: fadeIn 1.2s 0.1s cubic-bezier(.23,1.01,.32,1) backwards;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .prize-heading,
+  .award-card,
+  .emoji,
+  .prize-info,
+  .special-heading {
+    animation: none !important;
+    transition: none !important;
+  }
+}

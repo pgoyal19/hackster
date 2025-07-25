@@ -11,30 +11,30 @@ import event8 from '../assets/events/event8.jpeg';
 import event9 from '../assets/events/event9.jpeg';
 
 const images = [event1, event2, event3, event4, event5, event6, event7, event8, event9];
-const imagesReversed = [...images].reverse();
+const reversedImages = [...images].reverse();
 
 const Events = () => {
   return (
     <section className="events-section" id="events">
-      <h2 className="event-heading">Events Gallery</h2>
+      <h2 className="events-heading">Events Gallery</h2>
 
       <div className="carousel-container">
         {/* Top carousel - Left to Right */}
         <div className="carousel-track top">
-          {[...images, ...images].map((img, i) => (
+          {[...images, ...images, ...images].map((img, i) => (
             <img key={`top-${i}`} src={img} alt={`event ${i}`} className="carousel-image" />
           ))}
         </div>
 
-        {/* Bottom carousel - Right to Left, reversed order */}
+        {/* Bottom carousel - Right to Left with reversed image order for snake effect */}
         <div className="carousel-track bottom">
-          {[...imagesReversed, ...imagesReversed].map((img, i) => (
+          {[...reversedImages, ...reversedImages, ...reversedImages].map((img, i) => (
             <img key={`bottom-${i}`} src={img} alt={`event ${i}`} className="carousel-image" />
           ))}
         </div>
       </div>
     </section>
-  );
+  ); 
 };
 
 export default Events;

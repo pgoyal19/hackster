@@ -8,8 +8,8 @@ const sponsors = [
     items: [{ name: 'Genesis', logo: 'https://ugc.production.linktr.ee/566e80f8-c603-4696-843b-b2f489c9f3a8_IMG-20250516-WA0010-2-.jpeg?io=true&size=avatar-v3_0' }],
   },
   {
-    title: 'Entertainment Partner',
-    items: [{ name: 'Smaash', logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6fE2QC5vl_0VqYezN-jS-tSWHooybht3TAw&s" }],
+    title: 'Special Partner',
+    items: [{ name: 'GeeksforGeeks', logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/GeeksForGeeks_logo.png/1280px-GeeksForGeeks_logo.png" }],
   },
  
   {

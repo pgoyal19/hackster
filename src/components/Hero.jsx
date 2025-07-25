@@ -1,16 +1,12 @@
 import React from 'react';
 import './Hero.css';
-// import cocDoc from './Hackster COC.docx'; // Not used for public serving
 
 const Hero = () => {
-  // Handler for join button
   const handleJoinClick = (e) => {
     e.preventDefault();
     window.open('https://chat.whatsapp.com/If4uCxRimEO5kEjB69nPcC?mode=r_t', '_blank', 'noopener,noreferrer');
   };
 
-  // For best practice, the docx should be in public/assets. If not, instruct user to move it.
-  // If you want to force download, use an <a> tag with download attribute.
 
   return (
     <section className="hero" id="hero">
@@ -25,11 +21,11 @@ const Hero = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-              <button className="register">Register Now</button>
+              <button className="register"><b>Register on Unstop</b></button>
             </a>
 
-          <a href="/assets/Hackster COC.docx" download target="_blank" rel="noopener noreferrer">
-            <button className="conduct">Code of Conduct</button>
+          <a href="https://drive.google.com/file/d/1d47-6tdsVg8i56LOtFD5G0wQVsuOtrXH/view?usp=drive_link"  target="_blank" rel="noopener noreferrer">
+            <button className="conduct"><b>Code of Conduct</b></button>
           </a>
         </div>
 

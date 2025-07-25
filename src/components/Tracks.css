@@ -27,6 +27,7 @@
   max-width: 1200px;
   margin: 0 auto;
   animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
+  overflow: hidden;
 }
 
 @media (min-width: 700px) {
@@ -63,6 +64,8 @@
   border-color: #e2c4a4;
   box-shadow: 0 8px 32px #e2c4a499, 0 0 0 6px #3be8b033;
   transform: translateY(-10px) scale(1.04) rotate(-1deg);
+  transition: all ease 300ms;
+  
 }
 
 .track-icon {

@@ -19,7 +19,7 @@ const teamMembers = [
   { name: 'Kushagra Shukla', role: 'Content Head', img: kushagra, linkedin: 'https://www.linkedin.com/in/kushagra-shukla-22173219b/' },
   { name: 'Ashmit Shekhar', role: 'Social Media Head', img: ashmit, linkedin: 'https://www.linkedin.com/in/ashmit-shekhar-23006b2b0/' },
   { name: 'Jigyasa Shokeen', role: 'Social Media Head', img: jigyasa, linkedin: 'https://www.linkedin.com/in/jigyasa-shokeen-81a306323/' },
-  { name: 'Junaid', role: 'Graphics Head', img: junaid, linkedin: 'https://www.linkedin.com/in/junaid/' },
+  { name: 'Zunaid', role: 'Graphics Head', img: junaid,  },
   { name: 'Vansh Gupta', role: 'Coordinator', img: vansh, linkedin: 'https://www.linkedin.com/in/vansh-gupta-29b23129b/' },
 ];
 

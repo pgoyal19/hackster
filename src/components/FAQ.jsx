@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './FAQ.css';
-// If using Boxicons CDN in index.html, otherwise use a suitable icon library
 
 const faqs = [
   {
@@ -14,6 +13,10 @@ const faqs = [
   {
     question: "What's the team size?",
     answer: "Teams can have 2-4 members including. Solo participation is not allowed.",
+  },
+  {
+    question: "Is accommodation provided?",
+    answer: "The event is a 9 hour long hackathon, so accommodation is not provided. Participants are expected to make their own arrangements.",
   },
   {
     question: "Is it free to participate?",

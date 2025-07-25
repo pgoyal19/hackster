@@ -27,11 +27,14 @@
   display: flex;
   gap: clamp(4px, 1vw, 8px);
   width: max-content;
-  animation: scroll-left 20s linear infinite;
+}
+
+.carousel-track.top {
+  animation: scroll-left 30s linear infinite;
 }
 
 .carousel-track.bottom {
-  animation: scroll-right 20s linear infinite;
+  animation: scroll-right 30s linear infinite;
 }
 
 .carousel-image {
@@ -53,9 +56,10 @@
 }
 
 @keyframes scroll-right {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

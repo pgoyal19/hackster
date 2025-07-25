@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h2>Hackster</h2>
-          <p>Yahan code ki duniya mein sachchai aur wafadari ka raaj hai, aur har bug ka anjaam sirf ek hi—‘game over.’</p>
+          <p>Yahan code ki duniya mein sachchai aur wafadari ka raaj hai, aur har bug ka anjaam sirf ek hi—'game over.'</p>
           <div className="social-icons">
             <a href="https://discord.gg/TTRmcggG"><i className="fab fa-discord"></i></a>
             <a href="https://www.instagram.com/hackster_hmritm?igsh=ODN1MmJzdDN1MjZm"><i className="fab fa-instagram"></i></a>
@@ -32,6 +32,30 @@ const Footer = () => {
             <li><a href="#">Participation</a></li>
             <li><a href="#">Code of Conduct</a></li>
           </ul>
+        </div>
+
+        <div className="footer-section map-section">
+          <h3>Find Us</h3>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.7642934087633!2d77.0936!3d28.5562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b85fc2a2d49%3A0x8b4b4b4b4b4b4b4b!2sHMR%20Institute%20of%20Technology%20%26%20Management!5e0!3m2!1sen!2sin!4v1642425885234!5m2!1sen!2sin"
+              width="100%"
+              height="200"
+              style={{ border: 0, borderRadius: '8px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="HMR Institute of Technology Location"
+            ></iframe>
+          </div>
+          <a 
+            href="https://maps.google.com/?q=HMR+Institute+of+Technology+Management+Delhi" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="directions-link"
+          >
+            <i className="fas fa-directions"></i> Get Directions
+          </a>
         </div>
       </div>
 

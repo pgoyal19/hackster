@@ -1,14 +1,18 @@
-*{
+/* Fixed Footer.css */
+* {
   font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
 }
 
 .footer {
   background: #000;
   color: #3be8b0;
-  padding: clamp(1.2rem, 5vw, 50px) clamp(0.5rem, 4vw, 24px);
+  padding: clamp(1.2rem, 5vw, 50px) clamp(1rem, 4vw, 24px);
   font-family: 'Poppins', Courier, monospace;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .footer::before {
@@ -16,7 +20,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 110%;
+  width: 100%;
   height: 100%;
   background: url('/footer.png') center/cover no-repeat;
   filter: blur(5px) brightness(0.7);
@@ -32,17 +36,23 @@
   animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
   position: relative;
   z-index: 1;
-  gap: clamp(12px, 3vw, 32px);
+  gap: clamp(16px, 3vw, 32px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .footer-section {
-  flex: 1 1 220px;
+  flex: 1 1 250px;
   margin: clamp(8px, 2vw, 12px);
   padding: clamp(0.5rem, 2vw, 1.5rem);
   background: none;
   border: none;
   box-shadow: none;
   animation: slideUp 1s cubic-bezier(.23,1.01,.32,1);
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .footer-section h2,
@@ -67,6 +77,7 @@
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
@@ -96,6 +107,7 @@
 /* Map Section Styles */
 .map-section {
   min-width: 280px;
+  width: 100%;
 }
 
 .map-container {
@@ -105,11 +117,19 @@
   border: 2px solid #3be8b0;
   box-shadow: 0 4px 16px rgba(59, 232, 176, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .map-container:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(59, 232, 176, 0.3);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
 }
 
 .directions-link {
@@ -125,6 +145,7 @@
   text-decoration: none;
   font-size: clamp(12px, 1.5vw, 14px);
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .directions-link:hover {
@@ -140,6 +161,8 @@
 hr {
   border: 1px solid #3be8b0;
   margin: 24px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-bottom {
@@ -148,6 +171,8 @@ hr {
   color: #e2c4a4;
   animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
   padding: 8px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-bottom .icons {
@@ -159,57 +184,96 @@ hr {
   margin: 0 12px;
 }
 
+/* Mobile Layout Improvements */
 @media (max-width: 900px) {
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
-    gap: clamp(12px, 3vw, 32px);
+    gap: clamp(16px, 3vw, 24px);
   }
+  
   .footer-section {
-    flex: 1 1 100%;
+    flex: none;
+    width: 100%;
     margin: 8px 0;
     padding: clamp(0.5rem, 2vw, 1rem);
   }
+  
   .map-section {
     min-width: 100%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .footer {
-    padding: clamp(1rem, 4vw, 32px) clamp(0.2rem, 2vw, 8px);
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(1rem, 2vw, 1.5rem);
   }
-  .footer-section {
-    padding: clamp(0.3rem, 1vw, 0.75rem);
-    font-size: clamp(12px, 1vw, 14px);
+  
+  .footer-container {
+    gap: 1.5rem;
   }
-  .footer-section h2,
-  .footer-section h3 {
-    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
-  }
-  .footer-bottom {
-    font-size: clamp(10px, 1vw, 12px);
-    padding: 8px 0;
-  }
-  .footer-bottom .icons {
-    font-size: clamp(14px, 1vw, 18px);
-  }
+  
   .map-container iframe {
     height: 180px;
   }
 }
 
+@media (max-width: 600px) {
+  .footer {
+    padding: clamp(1rem, 4vw, 32px) clamp(0.5rem, 2vw, 1rem);
+  }
+  
+  .footer-section {
+    padding: clamp(0.5rem, 1vw, 0.75rem);
+    font-size: clamp(12px, 1vw, 14px);
+  }
+  
+  .footer-section h2,
+  .footer-section h3 {
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  }
+  
+  .footer-bottom {
+    font-size: clamp(10px, 1vw, 12px);
+    padding: 8px 0;
+  }
+  
+  .footer-bottom .icons {
+    font-size: clamp(14px, 1vw, 18px);
+  }
+  
+  .map-container iframe {
+    height: 160px;
+  }
+  
+  .directions-link {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 400px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+  
   .footer-section {
     padding: 0.5rem 0;
     font-size: clamp(11px, 1vw, 13px);
   }
+  
   .footer-section h2,
   .footer-section h3 {
     font-size: clamp(0.8rem, 1vw, 1rem);
   }
+  
   .map-container iframe {
-    height: 160px;
+    height: 140px;
+  }
+  
+  .footer-bottom span {
+    margin: 0 8px;
+    display: inline-block;
   }
 }
 

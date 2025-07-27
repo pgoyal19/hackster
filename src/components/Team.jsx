@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Team.css';
 import palak from '../assets/palak.png';
@@ -10,17 +9,73 @@ import jigyasa from '../assets/jigyasa.png';
 import junaid from '../assets/junaid.png';
 import vansh from '../assets/vansh.png';
 import kanak from '../assets/kanak.png';
+// LinkedIn SVG Icon Component
+const LinkedInIcon = () => (
+  <svg 
+    width="20" 
+    height="20" 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    style={{ display: 'inline-block', verticalAlign: 'middle' }}
+  >
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+  </svg>
+);
 
 const teamMembers = [
-  { name: 'Palak Goyal', role: 'Lead Organizer', img: palak, linkedin: 'https://www.linkedin.com/in/palak-goyal-924741319/' },
-  { name: 'Mayank Gupta', role: 'Tech Head', img: mayank, linkedin: 'https://www.linkedin.com/in/mayank-gupta-452701292/' },
-  { name: 'Khushi Sirohi', role: 'Tech Head', img: khushi, linkedin: 'https://www.linkedin.com/in/khushi-sirohi-3763a6282/' },
-  { name: 'Kanak Sharma', role: 'Tech Head', img: kanak, linkedin: 'https://www.linkedin.com/in/kanak-sharma-a5563b2a0/' },
-  { name: 'Kushagra Shukla', role: 'Content Head', img: kushagra, linkedin: 'https://www.linkedin.com/in/kushagra-shukla-22173219b/' },
-  { name: 'Ashmit Shekhar', role: 'Social Media Head', img: ashmit, linkedin: 'https://www.linkedin.com/in/ashmit-shekhar-23006b2b0/' },
-  { name: 'Jigyasa Shokeen', role: 'Social Media Head', img: jigyasa, linkedin: 'https://www.linkedin.com/in/jigyasa-shokeen-81a306323/' },
-  { name: 'Zunaid', role: 'Graphics Head', img: junaid,  },
-  { name: 'Vansh Gupta', role: 'Coordinator', img: vansh, linkedin: 'https://www.linkedin.com/in/vansh-gupta-29b23129b/' },
+  { 
+    name: 'Palak Goyal', 
+    role: 'Lead Organizer', 
+    img: palak, 
+    linkedin: 'https://www.linkedin.com/in/palak-goyal-924741319/' 
+  },
+  { 
+    name: 'Mayank Gupta', 
+    role: 'Tech Head', 
+    img: mayank,
+    linkedin: 'https://www.linkedin.com/in/mayank-gupta-452701292/' 
+  },
+  { 
+    name: 'Khushi Sirohi', 
+    role: 'Tech Head', 
+    img: khushi, 
+    linkedin: 'https://www.linkedin.com/in/khushi-sirohi-3763a6282/' 
+  },
+  { 
+    name: 'Kanak Sharma', 
+    role: 'Tech Head', 
+    img: kanak, 
+    linkedin: 'https://www.linkedin.com/in/kanak-sharma-a5563b2a0/' 
+  },
+  { 
+    name: 'Kushagra Shukla', 
+    role: 'Content Head', 
+    img: kushagra, 
+    linkedin: 'https://www.linkedin.com/in/kushagra-shukla-22173219b/' 
+  },
+  { 
+    name: 'Ashmit Shekhar', 
+    role: 'Social Media Head', 
+    img: ashmit, 
+    linkedin: 'https://www.linkedin.com/in/ashmit-shekhar-23006b2b0/' 
+  },
+  { 
+    name: 'Jigyasa Shokeen', 
+    role: 'Social Media Head', 
+    img: jigyasa, 
+    linkedin: 'https://www.linkedin.com/in/jigyasa-shokeen-81a306323/' 
+  },
+  { 
+    name: 'Zunaid', 
+    role: 'Graphics Head', 
+    img:junaid, 
+  },
+  { 
+    name: 'Vansh Gupta', 
+    role: 'Coordinator', 
+    img: vansh, 
+    linkedin: 'https://www.linkedin.com/in/vansh-gupta-29b23129b/' 
+  },
 ];
 
 const Team = () => {
@@ -31,21 +86,25 @@ const Team = () => {
         {teamMembers.map((member, index) => (
           <div key={index} className="team-card">
             <div className="team-image">
-              {member.img ? (
-                <img src={member.img} alt={member.name} />
-              ) : (
-                <div style={{width: '110px', height: '110px', background: '#222', borderRadius: '50%'}}></div>
-              )}
+              <img src={member.img} alt={member.name} />
             </div>
-            <h3 style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'}}>
-              {member.name}
+            <div className="team-info">
+              <h3>{member.name}</h3>
+              <p>{member.role}</p>
               {member.linkedin && member.linkedin !== '#' && (
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" style={{color: '#0A66C2', fontSize: '1.3em', marginLeft: '0.3em', display: 'inline-flex', alignItems: 'center'}} aria-label="LinkedIn">
-                  <i className="fab fa-linkedin"></i>
+                <a 
+                  href={member.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="linkedin-link"
+                  aria-label={`${member.name}'s LinkedIn Profile`}
+                  title="View LinkedIn Profile"
+                >
+                  <LinkedInIcon />
+                  <span>LinkedIn</span>
                 </a>
               )}
-            </h3>
-            <p>{member.role}</p>
+            </div>
           </div>
         ))}
       </div>

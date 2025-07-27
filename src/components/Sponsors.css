@@ -1,9 +1,14 @@
+/* ===== FIXED SPONSORS.CSS ===== */
 .sponsor-section {
-  padding: clamp(2rem, 5vw, 5rem) clamp(0.5rem, 4vw, 2rem);
+  padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 2rem);
   background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
   color: #3be8b0;
   text-align: center;
   font-family: 'Poppins', Courier, monospace;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .sponsor-heading {
@@ -17,24 +22,34 @@
 }
 
 .sponsor-subheading {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: #3be8b0;
-  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+  margin-bottom: clamp(2rem, 3vw, 3rem);
   animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
 }
 
 .sponsor-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1rem, 3vw, 2.5rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   align-items: center;
   justify-content: center;
   animation: fadeIn 1.2s 0.3s cubic-bezier(.23,1.01,.32,1) backwards;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .sponsor-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .sponsor-grid {
     gap: 2.5rem;
   }
 }
@@ -42,13 +57,16 @@
 .sponsor-card {
   background: linear-gradient(120deg, #232946 60%, #181c2b 100%);
   border-radius: 16px;
-  padding: clamp(1rem, 3vw, 2rem) clamp(0.7rem, 2vw, 1.5rem) clamp(1rem, 3vw, 1.5rem) clamp(0.7rem, 2vw, 1.5rem);
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
   border: 2px solid #3be8b0;
   box-shadow: 0 4px 32px #3be8b055;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   opacity: 0;
   transform: translateY(40px);
   animation: slideUp 0.8s cubic-bezier(.23,1.01,.32,1) forwards;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .sponsor-card:hover {
@@ -59,26 +77,51 @@
 
 .sponsor-card h3 {
   color: #e2c4a4;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: clamp(0.7rem, 2vw, 1.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  margin-bottom: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
 }
 
-.sponsor-card{
-  object-fit: contain;
-}
 .sponsor-card img {
-  max-width: clamp(70px, 30vw, 200px);
-  border-radius: 10px;
-  height: clamp(16vh, 20vw, 32vh);
-  width: 100%;
+  max-width: 100%;
+  width: clamp(120px, 30vw, 200px);
+  height: clamp(80px, 20vw, 150px);
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 .sponsor-card img:hover {
   transform: scale(1.1);
   filter: brightness(1.2) drop-shadow(0 4px 12px #3be8b088);
-  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .sponsor-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .sponsor-card {
+    padding: 1.2rem 1rem;
+  }
+  
+  .sponsor-card img {
+    width: clamp(100px, 25vw, 150px);
+    height: clamp(60px, 15vw, 100px);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Reduced Motion */

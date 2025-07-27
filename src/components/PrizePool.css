@@ -1,11 +1,272 @@
+/* ===== FIXED EVENTS.CSS ===== */
+.events-section {
+  color: #3be8b0;
+  padding: clamp(2rem, 4vw, 5rem) clamp(1rem, 2vw, 2rem);
+  font-family: 'Poppins', Courier, monospace;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.events-heading {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  color: #e2c4a4;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px #e2c4a444;
+  animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vw, 10px);
+  overflow: hidden;
+  animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-track {
+  display: flex;
+  gap: clamp(6px, 1vw, 10px);
+  width: max-content;
+}
+
+.carousel-track.top {
+  animation: scroll-left 30s linear infinite;
+}
+
+.carousel-track.bottom {
+  animation: scroll-right 30s linear infinite;
+}
+
+.carousel-image {
+  width: clamp(80px, 18vw, 180px);
+  height: clamp(50px, 12vw, 120px);
+  object-fit: cover;
+  border-radius: clamp(8px, 2vw, 12px);
+  flex-shrink: 0;
+  border: 2px solid #3be8b0;
+  box-shadow: 0 2px 12px #e2c4a455;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 1s cubic-bezier(.23,1.01,.32,1) forwards;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .events-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .carousel-image {
+    width: clamp(60px, 15vw, 120px);
+    height: clamp(40px, 10vw, 80px);
+    border-radius: 6px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .events-heading,
+  .carousel-container,
+  .carousel-track,
+  .carousel-image {
+    animation: none !important;
+  }
+}
+
+/* ===== FIXED FAQ.CSS ===== */
+.faqs-section {
+  background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+  color: #3be8b0;
+  padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 3vw, 2rem);
+  font-family: 'Poppins', Courier, monospace;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.faqs-section h3 {
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
+  margin-bottom: clamp(24px, 4vw, 40px);
+  margin-top: 10px;
+  color: #e2c4a4;
+  text-shadow: 0 2px 16px #e2c4a444;
+  letter-spacing: 1px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.faq-item {
+  background: rgba(35, 41, 70, 0.7);
+  border-radius: 15px;
+  margin-bottom: clamp(1rem, 2vw, 1.2rem);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(.23,1.01,.32,1);
+  border: 2px solid #3be8b0;
+  box-shadow: 0 4px 32px #3be8b055;
+  backdrop-filter: blur(8px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px) scale(1.01);
+  border-color: #e2c4a4;
+  box-shadow: 0 8px 32px #e2c4a499, 0 0 0 4px #3be8b033;
+}
+
+.faq-item.active {
+  background: rgba(35, 41, 70, 0.85);
+  box-shadow: 0 0 20px #3be8b044;
+  border-color: #e2c4a4;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  cursor: pointer;
+  color: #3be8b0;
+  font-family: 'Poppins', monospace;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  box-sizing: border-box;
+}
+
+.faq-question span {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 500;
+  color: #e2c4a4;
+  text-shadow: 0 2px 16px #e2c4a444;
+  flex: 1;
+  text-align: left;
+  margin-right: 1rem;
+}
+
+.faq-question i {
+  color: #3be8b0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  transition: transform 0.3s cubic-bezier(.23,1.01,.32,1), color 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-item.active .faq-question i,
+.faq-item:hover .faq-question i {
+  color: #e2c4a4;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(.23,1.01,.32,1);
+  background: none;
+}
+
+.faq-answer p {
+  padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+  color: #e2c4a4;
+  line-height: 1.6;
+  font-size: clamp(0.95rem, 2vw, 1rem);
+  text-shadow: 0 2px 8px #3be8b044;
+  box-sizing: border-box;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 1rem 0.5rem;
+  }
+  
+  .faq-question {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .faq-question span {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .faq-question i {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqs-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .faq-question {
+    padding: 0.8rem;
+  }
+  
+  .faq-answer p {
+    padding: 0 0.8rem 0.8rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .faq-item,
+  .faq-question i {
+    transition: none !important;
+  }
+}
+
+/* ===== FIXED PRIZEPOOL.CSS ===== */
 .prize-section {
   background: transparent;
   color: #3be8b0;
-  padding: clamp(2rem, 5vw, 7rem) clamp(0.5rem, 4vw, 8vw) clamp(1.5rem, 4vw, 5rem) clamp(0.5rem, 4vw, 8vw);
+  padding: clamp(2rem, 5vw, 7rem) clamp(1rem, 4vw, 2rem) clamp(2rem, 4vw, 5rem);
   font-family: 'Poppins', Courier, monospace;
   text-align: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 .prize-section::before {
@@ -29,7 +290,7 @@
 .prize-heading {
   font-size: clamp(1.4rem, 5vw, 2.8rem);
   color: #3be8b0;
-  margin-bottom: clamp(1.2rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
   letter-spacing: 1px;
   text-shadow: 0 2px 16px #43e97b44;
   animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
@@ -42,14 +303,25 @@
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(1.2rem, 4vw, 2.5rem);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
   justify-content: center;
-  margin-bottom: clamp(1.2rem, 4vw, 3rem);
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .card-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .card-grid {
     gap: 2.5rem;
   }
 }
@@ -57,7 +329,7 @@
 .award-card {
   background: linear-gradient(120deg, #232946 60%, #181c2b 100%);
   border: 2px solid #3be8b0;
-  padding: clamp(1rem, 3vw, 2rem) clamp(0.7rem, 2vw, 1.5rem) clamp(0.7rem, 2vw, 1.5rem) clamp(0.7rem, 2vw, 1.5rem);
+  padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
   border-radius: 18px;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
@@ -66,9 +338,8 @@
   opacity: 0;
   transform: translateY(40px);
   animation: slideUp 0.8s cubic-bezier(.23,1.01,.32,1) forwards;
-  min-width: unset;
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .award-card:hover {
@@ -78,15 +349,15 @@
 }
 
 .emoji {
-  font-size: clamp(1.2rem, 5vw, 2.8rem);
-  margin-bottom: clamp(0.7rem, 2vw, 1.2rem);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-bottom: clamp(1rem, 2vw, 1.2rem);
   filter: drop-shadow(0 2px 8px #43e97b44);
   animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
 }
 
 .award-card h3 {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  margin-bottom: clamp(0.7rem, 2vw, 1.2rem);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-bottom: clamp(1rem, 2vw, 1.2rem);
   font-weight: 700;
   color: #e2c4a4;
   letter-spacing: 0.5px;
@@ -96,12 +367,13 @@
   background: none;
   border: none;
   color: #3be8b0;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   text-decoration: underline;
   cursor: pointer;
   transition: color 0.2s;
   font-family: 'Poppins', monospace;
 }
+
 .award-card button:hover {
   color: #e2c4a4;
 }
@@ -109,24 +381,46 @@
 .prize-info {
   margin-top: 1rem;
   background: #232946cc;
-  padding: clamp(0.7rem, 2vw, 1.1rem);
+  padding: clamp(1rem, 2vw, 1.2rem);
   border: 1px solid #e2c4a499;
   border-radius: 12px;
-  font-size: clamp(0.95rem, 2vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   line-height: 1.5;
   color: #e2c4a4;
   box-shadow: 0 2px 12px #e2c4a422;
   animation: fadeIn 0.7s cubic-bezier(.23,1.01,.32,1);
+  box-sizing: border-box;
 }
 
 .special-heading {
   font-family: 'Poppins', monospace;
   color: #3be8b0;
-  font-size: clamp(1.2rem, 3vw, 1.7rem);
-  margin: clamp(1rem, 3vw, 2.5rem) 0 clamp(0.7rem, 2vw, 1.5rem);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  margin: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(1rem, 2vw, 1.5rem);
   letter-spacing: 0.5px;
   text-shadow: 0 2px 16px #43e97b44;
   animation: fadeIn 1.2s 0.1s cubic-bezier(.23,1.01,.32,1) backwards;
+}
+
+@media (max-width: 480px) {
+  .prize-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .award-card {
+    padding: 1.2rem 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Reduced Motion */

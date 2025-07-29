@@ -1,4 +1,3 @@
-/* Fixed About.css */
 .about-section {
   position: relative;
   color: #3be8b0;
@@ -6,7 +5,7 @@
   font-family: 'Poppins', Courier, monospace;
   overflow-x: hidden;
   min-height: auto;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: #000;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
@@ -192,7 +191,7 @@
 }
 
 .quote-box {
-  background: linear-gradient(90deg, #232946 60%, #181c2b 100%);
+  background: transparent;
   border: 2px solid #3be8b0;
   padding: clamp(0.8rem, 2vw, 1.5rem);
   border-radius: 12px;
@@ -228,7 +227,7 @@
 }
 
 .info-box {
-  background: #232946cc;
+  background: transparent;
   border: 2px solid #e2c4a4;
   padding: clamp(0.8rem, 2vw, 1.5rem);
   border-radius: 12px;

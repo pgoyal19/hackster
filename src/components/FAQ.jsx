@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './FAQ.css';
+import faqImg from '/faq.png'; // Ensure this path is correct or place 'faq.png' in 'public/'
 
 const faqs = [
   {
@@ -12,11 +13,11 @@ const faqs = [
   },
   {
     question: "What's the team size?",
-    answer: "Teams can have 2-4 members including. Solo participation is not allowed.",
+    answer: "Teams can have 2-4 members. Solo participation is not allowed.",
   },
   {
     question: "Is accommodation provided?",
-    answer: "The event is a 9 hour long hackathon, so accommodation is not provided. Participants are expected to make their own arrangements.",
+    answer: "The event is a 9-hour long hackathon, so accommodation is not provided. Participants are expected to make their own arrangements.",
   },
   {
     question: "Is it free to participate?",
@@ -28,7 +29,7 @@ const faqs = [
   },
   {
     question: "Are there participation certificates?",
-    answer: "Yes, all participants who successfully submit their projects before the deadline will receive a participation certificate while winners will receive a winner's achievement certificate.",
+    answer: "Yes, all participants who successfully submit their projects before the deadline will receive a participation certificate. Winners will receive a winner's certificate.",
   },
 ];
 
@@ -45,12 +46,14 @@ const FAQ = () => {
       <div className="faq-container">
         {faqs.map((faq, idx) => (
           <div
-            className={`faq-item${activeIndex === idx ? ' active' : ''}`}
+            className={`faq-item ${activeIndex === idx ? 'active' : ''}`}
             key={idx}
+            style={{ animationDelay: `${idx * 0.1}s` }}
           >
             <div className="faq-question" onClick={() => toggleFAQ(idx)}>
-              <span>{faq.question}</span>
-              <i className='bx bx-plus'></i>
+              <img src={faqImg} alt="faq icon" className="faq-image" />
+              <span className="faq-text">{faq.question}</span>
+              <span className="faq-icon">{activeIndex === idx ? '×' : '+'}</span>
             </div>
             <div className="faq-answer">
               <p>{faq.answer}</p>
@@ -62,4 +65,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ; 
+export default FAQ;

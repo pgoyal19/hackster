@@ -1,28 +1,30 @@
-/* Fixed Hero.css with Logo Support */
+/* Global Reset & Fonts */
 *, *::before, *::after {
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
+/* Hero Section */
 .hero {
   background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
   color: #3be8b0;
   min-height: 100vh;
-  padding: clamp(1rem, 4vw, 2rem);
+  padding: clamp(0.5rem, 2vw, 0.7rem) clamp(1rem, 4vw, 2rem);
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   font-family: 'Poppins', Courier, monospace;
   width: 100%;
-  max-width: 100vw;
 }
 
+/* Background image overlay */
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: url('/hero.jpg') center/cover no-repeat;
   filter: blur(5px) brightness(0.6);
   opacity: 0.85;
@@ -34,69 +36,71 @@
   z-index: 1;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   z-index: 1000;
-  
   backdrop-filter: blur(16px);
   box-shadow: 0 4px 24px #00000033;
+  background-color: transparent;
   padding: clamp(0.5rem, 2vw, 0.7rem) clamp(1rem, 4vw, 2rem);
-  box-sizing: border-box;
 }
 
-/* Logo container for multiple logos */
-.navbar .brand {
+/* Logo */
+.logo-wrapper {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 2vw, 1rem);
+  gap: 1rem;
 }
 
-.navbar .brand .logo {
-  height: clamp(2rem, 5vw, 3rem);
+.logo {
+  height: 60px;
   width: auto;
-  transition: transform 0.3s, filter 0.3s;
+  object-fit: contain;
   filter: brightness(1.1) contrast(1.1);
-
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.navbar .brand .logo:hover {
-  transform: scale(1.05);
-  filter: brightness(1.3) contrast(1.2);
+.logo:hover {
+  transform: scale(1.1) rotate(-2deg);
+  filter: brightness(1.3);
 }
 
-/* If you want to add a separator between logos */
-.navbar .brand .logo-separator {
-  width: 1px;
-  height: clamp(1.5rem, 4vw, 2rem);
-  background: linear-gradient(to bottom, transparent, #3be8b0, transparent);
-  opacity: 0.6;
-}
-
-.navbar nav {
+/* Nav Links */
+.nav-links {
   display: flex;
-  align-items: center;
-  gap: clamp(0.5rem, 2vw, 1.2rem);
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.navbar nav a {
-  position: relative;
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-links a {
   color: #e2c4a4;
   text-decoration: none;
   font-weight: 600;
   font-family: 'Poppins', monospace;
-  transition: color 0.3s;
   font-size: clamp(0.9rem, 2vw, 1.2rem);
+  position: relative;
   padding: 0.5rem;
+  transition: color 0.3s;
 }
 
-.navbar nav a::after {
+.nav-links a:hover {
+  color: #3be8b0;
+}
+
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -107,62 +111,25 @@
   transition: width 0.3s;
 }
 
-.navbar nav a:hover {
-  color: #3be8b0;
-}
-
-.navbar nav a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* Better mobile navigation */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-  
-  .navbar .brand .logo {
-    height: 2rem;
-  }
-  
-  .navbar nav {
-    gap: 0.5rem;
-  }
-  
-  .navbar nav a {
-    font-size: 0.9rem;
-    padding: 0.3rem 0.5rem;
-  }
+/* Hamburger (hidden by default) */
+.hamburger {
+  display: none;
 }
 
-@media (max-width: 600px) {
-  .navbar .brand {
-    gap: 0.5rem;
-  }
-  
-  .navbar .brand .logo {
-    height: 1.8rem;
-  }
-  
-  .navbar nav {
-    gap: 0.3rem;
-  }
-  
-  .navbar nav a {
-    font-size: 0.8rem;
-    padding: 0.2rem 0.3rem;
-  }
-}
-
+/* Hero Content */
 .hero-content {
   text-align: center;
   margin-top: clamp(4rem, 8vw, 6rem);
-  animation: slideUp 1.2s cubic-bezier(.23,1.01,.32,1);
   padding: 0 clamp(1rem, 4vw, 2rem);
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  animation: slideUp 1.2s cubic-bezier(.23, 1.01, .32, 1);
 }
 
 .hero-content h1 {
@@ -170,7 +137,7 @@
   color: #3be8b0;
   letter-spacing: 2px;
   text-shadow: 0 2px 16px #43e97b44;
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 
@@ -180,62 +147,61 @@
 
 .subtitle {
   font-size: clamp(1rem, 3vw, 1.7rem);
-  margin-top: 0.5rem;
   color: #e2c4a4;
   text-shadow: 0 2px 16px #e2c4a444;
   line-height: 1.4;
 }
 
+/* Buttons */
 .join-btn {
   background: linear-gradient(90deg, #3be8b0 0%, #43e97b 100%);
   color: #181c2b;
   padding: clamp(0.7rem, 2vw, 1rem) clamp(1.5rem, 6vw, 2.5rem);
-  margin: clamp(1.5rem, 3vw, 2rem) 0;
+  margin-top: clamp(1.5rem, 3vw, 2rem);
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  font-family: 'Poppins', monospace;
   font-weight: 700;
   font-size: clamp(1rem, 2vw, 1.2rem);
   box-shadow: 0 2px 8px #43e97b44;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
-  display: inline-block;
 }
 
 .join-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 18px #ffb86b80;
   background: linear-gradient(90deg, #ffb86b 0%, #ff6a6a 100%);
   color: #fff;
+  box-shadow: 0 0 18px #ffb86b80;
 }
 
+.join-btn:active {
+  transform: scale(0.97);
+}
+
+/* CTA Buttons */
 .cta-buttons {
   display: flex;
-  justify-content: center;
-  gap: clamp(1rem, 4vw, 2rem);
-  margin-top: clamp(1.5rem, 3vw, 2rem);
   flex-direction: column;
   align-items: center;
+  gap: clamp(1rem, 4vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2rem);
   width: 100%;
-}
-
-@media (min-width: 600px) {
-  .cta-buttons {
-    flex-direction: row;
-  }
 }
 
 .cta-buttons .register,
 .cta-buttons .conduct {
   width: 100%;
   max-width: 300px;
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
   padding: clamp(0.7rem, 2vw, 1rem);
-  margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
+  .cta-buttons {
+    flex-direction: row;
+  }
+
   .cta-buttons .register,
   .cta-buttons .conduct {
     width: auto;
@@ -244,6 +210,7 @@
   }
 }
 
+/* Shapes (hidden on mobile) */
 .floating-shapes .triangle,
 .floating-shapes .square,
 .floating-shapes .circle {
@@ -258,33 +225,66 @@
   }
 }
 
-/* Additional mobile fixes */
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: #000;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .hamburger-icon {
+    display: block;
+    height: 24px;
+    width: 24px;
+    object-fit: contain;
+  }
+}
+
 @media (max-width: 480px) {
   .hero {
     padding: 1rem 0.5rem;
+    min-height: 70vh;
   }
-  
-  .hero-content {
-    margin-top: 5rem;
-    padding: 0 1rem;
-  }
-  
+
   .hero-content h1 {
     font-size: 1.5rem;
     line-height: 1.1;
   }
-  
+
   .subtitle {
     font-size: 0.9rem;
   }
-  
+
   .join-btn {
     font-size: 0.9rem;
     padding: 0.8rem 1.5rem;
-  }
-  
-  .navbar .brand .logo {
-    height: 1.5rem;
   }
 }
 
@@ -305,12 +305,9 @@
   }
 }
 
-/* Reduced Motion */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .navbar,
-  .hero-content,
-  .join-btn,
-  .cta-buttons {
+  *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }

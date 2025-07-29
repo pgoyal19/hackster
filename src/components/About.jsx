@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
-import logo from '../assets/logo.png';
 import AOS from 'aos';
+import logo from '/logo2.jpg'; 
 import 'aos/dist/aos.css';
 
 const About = () => {

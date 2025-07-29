@@ -1,27 +1,28 @@
 .events-section {
   color: #3be8b0;
-  padding: clamp(2rem, 4vw, 5rem) clamp(1rem, 2vw, 2rem);
+  padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 4vw, 3rem); /* Increased padding */
   font-family: 'Poppins', Courier, monospace;
   overflow: hidden;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
+  background-color: #000;
 }
 
 .events-heading {
   text-align: center;
-  font-size: clamp(1.4rem, 3vw, 2.3rem);
-  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.6rem, 4vw, 3rem); /* Increased font size */
+  margin-bottom: clamp(2rem, 4vw, 3rem);
   color: #e2c4a4;
   letter-spacing: 1px;
-  text-shadow: 0 2px 16px #e2c4a444;
+  text-shadow: 0 2px 18px #e2c4a444;
   animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
 }
 
 .carousel-container {
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1vw, 10px);
+  gap: clamp(10px, 1.5vw, 14px); /* Increased gap */
   overflow: hidden;
   animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
   width: 100%;
@@ -30,7 +31,7 @@
 
 .carousel-track {
   display: flex;
-  gap: clamp(6px, 1vw, 10px);
+  gap: clamp(10px, 1.5vw, 14px); /* Increased gap */
   width: max-content;
 }
 
@@ -43,13 +44,13 @@
 }
 
 .carousel-image {
-  width: clamp(80px, 18vw, 180px);
-  height: clamp(50px, 12vw, 120px);
+  width: clamp(100px, 22vw, 220px);  /* Increased size */
+  height: clamp(70px, 14vw, 160px);  /* Increased size */
   object-fit: cover;
-  border-radius: clamp(8px, 2vw, 12px);
+  border-radius: clamp(10px, 2.5vw, 14px); /* Increased rounding */
   flex-shrink: 0;
   border: 2px solid #3be8b0;
-  box-shadow: 0 2px 12px #e2c4a455;
+  box-shadow: 0 2px 16px #e2c4a455;
   opacity: 0;
   transform: translateY(40px);
   animation: slideUp 1s cubic-bezier(.23,1.01,.32,1) forwards;
@@ -77,19 +78,20 @@
   }
 }
 
+/* 📱 Mobile adjustments */
 @media (max-width: 480px) {
   .events-section {
-    padding: 2rem 0.5rem;
+    padding: 3rem 1rem;
   }
-  
+
   .carousel-image {
-    width: clamp(60px, 15vw, 120px);
-    height: clamp(40px, 10vw, 80px);
-    border-radius: 6px;
+    width: clamp(80px, 20vw, 150px);
+    height: clamp(60px, 16vw, 120px);
+    border-radius: 8px;
   }
 }
 
-/* Reduced Motion */
+/* 🧘 Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .events-heading,
   .carousel-container,

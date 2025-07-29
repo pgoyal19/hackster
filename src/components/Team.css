@@ -64,7 +64,7 @@
 }
 
 .team-card {
-  background: linear-gradient(120deg, #232946 60%, #181c2b 100%);
+  background: rgba(24, 26, 34, 0.6);
   color: #e2c4a4;
   padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2vw, 1.5rem);
   border: 2px solid #3be8b0;

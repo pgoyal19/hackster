@@ -1,7 +1,6 @@
-/* Fixed Tracks.css */
 .tracks-section {
   padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 2rem);
-  background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+  background: #000;
   color: #3be8b0;
   text-align: center;
   font-family: 'Poppins', Courier, monospace;
@@ -22,41 +21,45 @@
   animation: fadeIn 1.2s cubic-bezier(.23,1.01,.32,1);
 }
 
+/* SCROLLABLE container */
 .tracks-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  justify-content: center;
-  align-items: stretch;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1rem;
+  padding-inline: 1rem;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
-  overflow: hidden;
   box-sizing: border-box;
+  animation: fadeIn 1.2s 0.2s cubic-bezier(.23,1.01,.32,1) backwards;
+  scrollbar-width: thin;
+  scrollbar-color: #3be8b0 #000;
 }
 
-@media (min-width: 600px) {
-  .tracks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
+/* Scrollbar styling for modern browsers */
+.tracks-grid::-webkit-scrollbar {
+  height: 10px;
 }
 
-@media (min-width: 900px) {
-  .tracks-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-  }
+.tracks-grid::-webkit-scrollbar-track {
+  background: #111;
+}
+
+.tracks-grid::-webkit-scrollbar-thumb {
+  background: #3be8b0;
+  border-radius: 8px;
 }
 
 .track-card {
-  background: rgba(30, 30, 40, 0.6);
+  flex: 0 0 clamp(280px, 90vw, 320px);
+  scroll-snap-align: center;
+  background: transparent;
   border: 2px solid #3be8b0;
   border-radius: 22px;
   box-shadow: 0 4px 32px #3be8b055;
   backdrop-filter: blur(8px);
-  padding: clamp(1.2rem, 3vw, 2.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(1.2rem, 3vw, 2.5rem);
   transition: transform 0.35s cubic-bezier(.23,1.01,.32,1), box-shadow 0.35s, border-color 0.35s;
   opacity: 0;
   transform: translateY(60px) scale(0.96);
@@ -122,19 +125,26 @@
   line-height: 1.5;
 }
 
-/* Mobile-specific improvements */
+/* MOBILE ENHANCEMENTS */
 @media (max-width: 768px) {
   .tracks-section {
     padding: 2rem 1rem;
     min-height: auto;
   }
-  
-  .tracks-grid {
-    gap: 1.5rem;
+
+  .tracks-heading {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
   }
-  
+
   .track-card {
     padding: 1.5rem 1rem;
+  }
+
+  .track-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
   }
 }
 
@@ -142,36 +152,34 @@
   .tracks-section {
     padding: 2rem 0.5rem;
   }
-  
+
   .tracks-grid {
     gap: 1rem;
-    padding: 0 0.5rem;
+    padding-inline: 0.5rem;
   }
-  
+
   .track-card {
     padding: 1.2rem 0.8rem;
     border-radius: 16px;
   }
-  
+
   .track-icon {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    width: 56px;
+    height: 56px;
     font-size: 1.8rem;
-    margin-bottom: 1rem;
   }
-  
+
   .track-card h3 {
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .track-card p {
     font-size: 0.9rem;
   }
 }
 
-/* Animation keyframes */
+/* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }

@@ -1,62 +1,3 @@
-/* EVENTS SECTION */
-.events-section {
-  color: #3be8b0;
-  background-color: #000;
-  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 3vw, 3rem);
-  font-family: 'Poppins', monospace;
-  overflow: hidden;
-  width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
-}
-
-.events-heading {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: clamp(2rem, 4vw, 3rem);
-  color: #e2c4a4;
-  text-shadow: 0 4px 20px #e2c4a499;
-  animation: fadeIn 1.2s ease both;
-  letter-spacing: 2px;
-}
-
-.carousel-container {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(10px, 2vw, 16px);
-  overflow: hidden;
-  animation: fadeIn 1.2s 0.2s ease both;
-}
-
-.carousel-track {
-  display: flex;
-  gap: clamp(10px, 1.5vw, 16px);
-  width: max-content;
-  align-items: center;
-}
-
-.carousel-track.top {
-  animation: scroll-left 30s linear infinite;
-}
-
-.carousel-track.bottom {
-  animation: scroll-right 30s linear infinite;
-}
-
-.carousel-image {
-  width: clamp(100px, 18vw, 200px);
-  height: clamp(60px, 14vw, 140px);
-  object-fit: cover;
-  border-radius: clamp(10px, 2vw, 14px);
-  flex-shrink: 0;
-  border: 2px solid #3be8b0;
-  box-shadow: 0 4px 16px #3be8b044;
-  animation: slideUp 1s ease forwards;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-/* PRIZE SECTION */
 .prize-section {
   background-color: #000;
   color: #3be8b0;
@@ -198,71 +139,73 @@
 }
 
 /* RESPONSIVE */
+/* Tablets and smaller devices (<= 768px) */
 @media (max-width: 768px) {
-  .carousel-image {
-    width: clamp(80px, 20vw, 120px);
-    height: clamp(50px, 12vw, 100px);
-  }
-
-  .award-card {
-    padding: 1.5rem 1rem;
-  }
-
-  .events-section,
   .prize-section {
-    padding: 2rem 1rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-@media (max-width: 480px) {
-  /* General section paddings */
-  .events-section,
-  .prize-section {
-    padding: 1.5rem 1rem;
-  }
-
-  /* Headings */
-  .events-heading,
-  .prize-heading {
-    font-size: 1.75rem;
-    letter-spacing: 1px;
+    padding: 2rem 1.5rem;
     text-align: center;
-    margin-bottom: 1.5rem;
   }
 
-  /* Carousel */
-  .carousel-container {
-    gap: 12px;
+  .prize-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 
-  .carousel-track {
-    gap: 12px;
-  }
-
-  .carousel-image {
-    width: 90px;
-    height: 60px;
-    border-radius: 10px;
-  }
-
-  /* Award Cards */
   .card-grid {
-    grid-template-columns: 1fr; /* Stack vertically */
-    gap: 1.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
   }
 
   .award-card {
-    padding: 1.2rem;
+    padding: 1.5rem 1rem;
     border-radius: 16px;
+  }
+
+  .award-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .award-card button {
+    font-size: 1rem;
+  }
+
+  .emoji {
+    font-size: 2.2rem;
+  }
+
+  .prize-info {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .special-heading {
+    font-size: 1.6rem;
+    margin: 2rem 0 1.2rem;
+  }
+}
+
+/* Phones and small devices (<= 480px) */
+@media (max-width: 480px) {
+  .prize-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .prize-heading {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .award-card {
+    padding: 1rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #3be8b022;
   }
 
   .award-card h3 {
@@ -279,29 +222,32 @@
 
   .prize-info {
     font-size: 0.95rem;
-    padding: 1rem;
-    border-radius: 12px;
+    padding: 0.9rem;
+    border-radius: 10px;
   }
 
   .special-heading {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 1.5rem 0 1rem;
   }
 
-  /* Improve tap targets */
+  /* Disable hover effects for touch devices */
+  .award-card:hover {
+    transform: none;
+    box-shadow: 0 2px 12px #e2c4a422;
+    border-color: #3be8b0;
+  }
+
+  /* Animation tuning for mobile */
+  .carousel-track.top,
+  .carousel-track.bottom {
+    animation-duration: 18s;
+  }
+
+  /* Make buttons and cards more accessible */
   button,
   .award-card {
     touch-action: manipulation;
-  }
-
-  /* Improve visibility on small screens */
-  .award-card:hover {
-    transform: none; /* Prevent scaling on small screens */
-  }
-
-  .carousel-track.top,
-  .carousel-track.bottom {
-    animation-duration: 20s; /* Speed up a little for phones */
   }
 }
 

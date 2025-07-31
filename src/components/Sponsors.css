@@ -92,6 +92,29 @@
 .sponsor-card:nth-child(7) {
   grid-column: 4 / span 1;
 }
+.spon-link {
+  border: 2px solid #707176;
+  border-radius: 10px;
+  font-size: larger;
+  padding: 8px 16px; /* Optional: Better spacing */
+  box-shadow: 0 4px 8px rgba(59, 232, 176, 0.3); /* soft green shadow */
+  transition: all 0.3s ease; /* smooth hover */
+  text-decoration: none; /* optional for links */
+  color: #232946; /* text color */
+ /* optional */
+}
+
+.spon-link:hover {
+  box-shadow: 0 6px 12px rgba(59, 232, 176, 0.5); /* deeper glow on hover */
+  transform: translateY(-2px); /* lift effect */
+  background-color: #b1b9b6;
+  color: black;  /* soft green background on hover */
+}
+
+.spon-link a:hover{
+  padding: 30px 20px;
+   color: black;
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {

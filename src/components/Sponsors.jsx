@@ -55,6 +55,7 @@ const Sponsors = () => {
           </div>
         ))}
       </div>
+      <span className='spon-link'><a href="https://docs.google.com/forms/d/e/1FAIpQLScwRmbVjYlTMPn3GZFS3WonBRf3fKz-CTRq-TGB_IyFdjKiZQ/viewform?usp=header ">Interested in sponsoring? Click Here</a></span>
     </section>
   );
 };

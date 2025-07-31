@@ -9,6 +9,7 @@ import jigyasa from '../assets/jigyasa.png';
 import junaid from '../assets/junaid.png';
 import vansh from '../assets/vansh.png';
 import kanak from '../assets/kanak.png';
+import abhi from '../assets/abhi.jpg';
 // LinkedIn SVG Icon Component
 const LinkedInIcon = () => (
   <svg 
@@ -75,6 +76,12 @@ const teamMembers = [
     role: 'Coordinator', 
     img: vansh, 
     linkedin: 'https://www.linkedin.com/in/vansh-gupta-29b23129b/' 
+  },
+  { 
+    name: 'Abhinav Jha', 
+    role: 'PR Head', 
+    img: abhi, 
+    linkedin: 'http://www.linkedin.com/in/abhinav-jha-41266b346' 
   },
 ];
 

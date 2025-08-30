@@ -6,7 +6,6 @@ import khushi from '../assets/khushi.png';
 import mayank from '../assets/mayank.png';
 import kushagra from '../assets/kushagra.png';
 import jigyasa from '../assets/jigyasa.png';
-import ishika from "../assets/ishika.jpeg";  
 import junaid from '../assets/junaid.png';
 import aakash from '../assets/aakash.jpeg'
 import vansh from '../assets/vansh.png';
@@ -61,12 +60,6 @@ const teamMembers = [
     role: 'Social Media Head', 
     img: ashmit, 
     linkedin: 'https://www.linkedin.com/in/ashmit-shekhar-23006b2b0/' 
-  },
-  { 
-    name: 'Ishika Tyagi', 
-    role: 'Social Media Head', 
-    img: ishika, 
-    linkedin: 'https://www.linkedin.com/in/ishika-tyagi-264091331/' 
   },
   { 
     name: 'Jigyasa Shokeen', 

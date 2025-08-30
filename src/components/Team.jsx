@@ -6,7 +6,7 @@ import khushi from '../assets/khushi.png';
 import mayank from '../assets/mayank.png';
 import kushagra from '../assets/kushagra.png';
 import jigyasa from '../assets/jigyasa.png';
-import ishika from '../assests/ishika.jpeg';
+import ishika from 'src/assets/ishika.jpeg';
 import junaid from '../assets/junaid.png';
 import aakash from '../assets/aakash.jpeg'
 import vansh from '../assets/vansh.png';

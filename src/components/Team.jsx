@@ -7,6 +7,7 @@ import mayank from '../assets/mayank.png';
 import kushagra from '../assets/kushagra.png';
 import jigyasa from '../assets/jigyasa.png';
 import junaid from '../assets/junaid.png';
+import aakash from '../assets/aakash.png'
 import vansh from '../assets/vansh.png';
 import kanak from '../assets/kanak.png';
 import abhi from '../assets/abhi.jpg';
@@ -70,6 +71,12 @@ const teamMembers = [
     name: 'Zunaid', 
     role: 'Graphics Head', 
     img:junaid, 
+  },
+  { 
+    name: 'Aakash Raghav', 
+    role: 'Graphics Designer', 
+    img: aakash, 
+    linkedin: 'https://www.linkedin.com/in/aakash-raghav' 
   },
   { 
     name: 'Vansh Gupta', 

@@ -7,7 +7,7 @@ import mayank from '../assets/mayank.png';
 import kushagra from '../assets/kushagra.png';
 import jigyasa from '../assets/jigyasa.png';
 import junaid from '../assets/junaid.png';
-import aakash from '../assets/aakash.png'
+import aakash from '../assets/aakash.jpeg'
 import vansh from '../assets/vansh.png';
 import kanak from '../assets/kanak.png';
 import abhi from '../assets/abhi.jpg';

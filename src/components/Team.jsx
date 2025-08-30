@@ -81,7 +81,7 @@ const teamMembers = [
   },
   { 
     name: 'Aakash Raghav', 
-    role: 'Graphics Designer', 
+    role: 'Graphics Head', 
     img: aakash, 
     linkedin: 'https://www.linkedin.com/in/aakash-raghav' 
   },

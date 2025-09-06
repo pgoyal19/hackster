@@ -38,7 +38,7 @@ Hackster is not your average coding marathon. It's a 9-hour wild ride into the w
           <div className="info-grid">
             <div className="info-box">
               <h4>📅 Dates</h4>
-              <p>September 6, 2025</p>
+              <p>September 20, 2025</p>
             </div>
             <div className="info-box">
               <h4>📍 Venue</h4>
